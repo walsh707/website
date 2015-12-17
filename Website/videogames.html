@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+	$("#flip").click(function(){
+		$("#panel").slideToggle("slow");
+	});
+});	
+
+
+$(document).ready(function() { 
+$('li.category').addClass('plusimageapply'); $('li.category').children().addClass('selectedimage'); $('li.category').children().hide(); 
+$('li.category').each( function(column) { 
+$(this).click(function(event){ 
+if (this == event.target) { 
+if($(this).is('.plusimageapply')) { 
+$(this).children().show(); 
+$(this).removeClass('plusimageapply'); $(this).addClass('minusimageapply'); 
+} else { 
+$(this).children().hide(); 
+$(this).removeClass('minusimageapply'); $(this).addClass('plusimageapply'); 
+} 
+} 
+}); 
+}); 
+});
+
+
+function cycleImages(){
+      var $active = $('#cycler .active');
+      var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
+      $next.css('z-index',2);//move the next image up the pile
+      $active.fadeOut(1500,function(){//fade out the top image
+	  $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+          $next.css('z-index',3).addClass('active');//make the next image the top one
+      });
+    }
+
+$(document).ready(function(){
+// run every 5s
+setInterval('cycleImages()', 5000);
+})
+
+
+</script>
+
+<style>
+body{background-image:url("./pics/bg.jpg");}
+
+.plusimageapply{ cursor:pointer; } 
+.minusimageapply{ cursor:pointer; } 
+.selectedimage{ cursor:pointer; }
+
+
+#cycler{float:right; background-color:gray; height:510px; width:510px;margin-right:10px;border-style:outset}
+#cycler img{position:absolute; z-index:1;width:500px;height:500px;}
+#cycler img.active{z-index:3}	
+
+li{font-weight:bold;}
+</style>
+<link rel="stylesheet" type="text/css" href="style.css">
+	
+
+	
+	
+	
+</style>
+</head>
+
+<body>
+<div id="flip">Navigation<br><img src="./pics/Arrow.png" style="width:100px; height:50;margin:10px;"></div>
+<div id="panel">
+<ul id="menu">
+	<li><a href="index.html"><div class="nav">Main</div></a></li>
+	<li><a href="about.html"><div class="nav">About Me</div></a></li>
+	<li><a href="resume.html"><div class="nav">Resume</div></a></li>
+	<li><a href="other.html"><div class="nav">Other Jobs</div></a></li>
+	<li><a href="portfolio.html"><div class="nav">Portfolio</div></a></li>
+	<li><a href="PCrepair.html"><div class="nav">PC Repair</div></a></li>
+	<li><a href="videogames.html"><div class="nav">Video Games</div></a></li>
+	<li><a href="anime.html"><div class="nav">Anime</div></a></li>
+	<li><a href="music.html"><div class="nav">Music</div></a></li>
+	<li><a href="contact.html"><div class="nav">Contact Me</div></a></li>
+</ul>
+</div> 
+
+
+
+
+<div id="div1">
+<p> 
+Video Games are very important to me, they are my biggest hobby/interest and are my number one past time. <br>
+<br>
+I also enjoy thinking about how they are made, consepts behind them and how they might be improved.
+<br>
+<br>
+I have been playing video games for quite a while and have a pretty big collection.<br>
+I will attemp to list some of my favorite.<br>
+<br>
+These "categories" are just where I would place them. 
+Also if I list a series chances are good I've played all game.<br>
+Also I might have left some out, just of the top of my head.
+</p>
+<img src="./pics/icons/tonberry.gif" style="position: absolute; bottom: 0; margin-bottom:8%;margin-left:10%;"> 
+</div>
+<div id="div2"> 
+<h1>Video Games</h1>
+<p>(click on a list items to exspance them.)</p>
+<div id="cycler">
+<img class="active" src="./pics/vg/ffvi.jpg" alt="My image"/>
+<img src="./pics/vg/Fallout4.jpg" alt="My image"/>	
+<img src="./pics/vg/HalfLife2.jpg" alt="My image"/>	
+<img src="./pics/vg/MassEffect3.jpg" alt="My image"/>
+<img src="./pics/vg/ff7.jpg" alt="My image"/>
+<img src="./pics/vg/sr2.jpg" alt="My image"/>
+<img src="./pics/vg/DA.jpg" alt="My image"/>
+<img src="./pics/vg/XZ.bmp" alt="My image"/>
+</div> 
+
+<ul> 
+	<li class="category">RPGs
+		<ul> 
+			<li class="category">Classic RPGs
+				<ul> 
+					<li style="list-style-image: url('./pics/icons/chocobo.gif');">Final Fantasy series</li> 
+					<li style="list-style-image: url('./pics/icons/starocean.png');">Star Ocean series</li>
+					<li style="list-style-image: url('./pics/icons/tales.png');">Tales of series</li>
+					<li style="list-style-image: url('./pics/icons/millenia.png');">Gradia 2</li>
+				</ul> 
+			</li> 
+			<br>
+			<li class="category">Adventure RPGs
+				<ul> 
+					<li style="list-style-image: url('./pics/icons/n7.png');">Mass Effect</li> 
+					<li style="list-style-image: url('./pics/icons/knights.png');">Knights of the Old Rebublic</li>
+					<li style="list-style-image: url('./pics/icons/Dragon.png');">Dragon Age</li> 
+					<li style="list-style-image: url('./pics/icons/destiny.png');">Destiny</li>
+				</ul> 
+			</li> 
+			<br>
+			<li class="category">Top Down RPGs
+				<ul> 
+					<li style="list-style-image: url('./pics/icons/baldurs.png');">Baldur Gate</li> 
+					<li style="list-style-image: url('./pics/icons/icewind.png');">Ice Wind Dale</li> 
+					<li style="list-style-image: url('./pics/icons/d3.png');">Diablo</li>
+				</ul> 
+			</li> 
+		</ul> 
+
+	</li> 
+
+	<li class="category">FPS 
+		<ul> 
+			<li style="list-style-image: url('./pics/icons/Half-Life.png');">Half-life</li> 
+			<li style="list-style-image: url('./pics/icons/halo.png');">Halo</li>
+			<li style="list-style-image: url('./pics/icons/battle.png');">Battlefront</li>
+			<li style="list-style-image: url('./pics/icons/jediknight.png');">Star wars: DarkForces/JediKnight</li>
+		</ul> 
+	</li>
+
+		<li class="category">Open World Action-Adventure 
+			<ul> 
+				<li style="list-style-image: url('./pics/icons/fallout.png');">Fallout</li> 
+				<li style="list-style-image: url('./pics/icons/skyrim.png');">Skyrim</li>
+			</ul> 
+		</li>
+		
+		<li class="category">MMORPGs
+			<ul> 
+				<li style="list-style-image: url('./pics/icons/wow.png');">World of Warcraft</li> 
+				<li style="list-style-image: url('./pics/icons/swtor.png');">SW:The Old Republic</li>
+				<li style="list-style-image: url('./pics/icons/FFXIV.png');">Final Fantasy XIV/XI</li>
+			</ul> 
+		</li>
+	
+			<li class="category">RTS
+				<ul> 
+					<li style="list-style-image: url('./pics/icons/starcraft.png');">Starcraft</li>
+					<li style="list-style-image: url('./pics/icons/wow.png');">Warcraft</li>
+					<li style="list-style-image: url('./pics/icons/homeworld.png');">Homeworld</li>
+				</ul> 
+			</li>
+			
+			<li class="category">Action-Adventure
+				<ul> 
+					<li style="list-style-image: url('./pics/icons/lok.png');">Legacy of Kain</li>
+					<li style="list-style-image: url('./pics/icons/assassin.png');">Assasins Creed</li>
+					<li style="list-style-image: url('./pics/icons/batman.png');">Batman:Arkham</li>
+					<li style="list-style-image: url('./pics/icons/metalgear.png');">Metal Gear</li>
+				</ul> 
+			</li>
+			
+			<li class="category">MOBA
+				<ul> 
+					<li style="list-style-image: url('./pics/icons/hots.png');">Heroes of the Storm</li>
+					<li style="list-style-image: url('./pics/icons/overwatch.png');">Overwatch</li>
+				</ul> 
+			</li>
+			<li class="category">Simulators
+				<ul> 
+					<li style="list-style-image: url('./pics/icons/x-wing.png');">X-wing</li>
+					<li style="list-style-image: url('./pics/icons/tie.png');">Tie Fighter</li>
+					<li style="list-style-image: url('./pics/icons/battle.png');">X-wing vs Tie Fighter</li>					
+				</ul> 
+			</li>
+			
+</ul>
+</div>
+<div id="div3"></div>
+
+
+</body>
+</html>

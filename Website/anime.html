@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+	$("#flip").click(function(){
+		$("#panel").slideToggle("slow");
+	});
+});	
+
+
+
+function cycleImages(){
+      var $active = $('#cycler .active');
+      var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
+      $next.css('z-index',2);//move the next image up the pile
+      $active.fadeOut(1500,function(){//fade out the top image
+	  $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+          $next.css('z-index',3).addClass('active');//make the next image the top one
+      });
+    }
+
+$(document).ready(function(){
+// run every 5s
+setInterval('cycleImages()', 5000);
+})
+
+
+</script>
+
+<style>
+body{background-image:url("./pics/bg.jpg");}
+
+#cycler{float:right; background-color:white;height:510px; width:510px;margin-right:10%;margin-top:1%;border-style:outset;}
+#cycler img{position:absolute;z-index:1;width:500px;height:500px;}
+#cycler img.active{z-index:3}	
+
+
+#p1{float:left;
+	width:35%;
+	margin-left:5px;
+	background :rgb(31, 141, 214);
+	background: rgba(31, 141, 214, 0.5);
+	border-radius: 5px; 
+	margin:1%;
+	}
+</style>
+
+
+<link rel="stylesheet" type="text/css" href="style.css">
+	
+	
+
+</head>
+
+<body>
+<div id="flip">Navigation<br><img src="./pics/Arrow.png" style="width:100px; height:50;margin:10px;"></div>
+<div id="panel">
+<ul id="menu">
+	<li><a href="index.html"><div class="nav">Main</div></a></li>
+	<li><a href="about.html"><div class="nav">About Me</div></a></li>
+	<li><a href="resume.html"><div class="nav">Resume</div></a></li>
+	<li><a href="other.html"><div class="nav">Other Jobs</div></a></li>
+	<li><a href="portfolio.html"><div class="nav">Portfolio</div></a></li>
+	<li><a href="PCrepair.html"><div class="nav">PC Repair</div></a></li>
+	<li><a href="videogames.html"><div class="nav">Video Games</div></a></li>
+	<li><a href="anime.html"><div class="nav">Anime</div></a></li>
+	<li><a href="music.html"><div class="nav">Music</div></a></li>
+	<li><a href="contact.html"><div class="nav">Contact Me</div></a></li>
+</ul>
+</div> 
+
+
+
+
+<div id="div1">
+
+<a href="http://www.allmyanime.tv/"><img src="./pics/anime/goku.gif" alt="goku" style="width:175px;height:175px; position:absolute; bottom: 0; margin-bottom:6%;margin-left:14%;"></a>
+
+</div>
+<div id="div2">
+<h1 style="margin-left:10%;">Anime</h1>
+<div id="p1">
+<p style="padding:1%;">Like video game I enjoy anime just as much. I prfer to watch anime more than regular tv programs or movies, because I belive that they have much better stories.
+I also get the feeling that anime creator have more creative freedom. Anime has even broght new music to my attention.<br>
+There are different types of anime much like anything, I enjoy all of them although some I will admit are kinda wierd, looking at the perspective of what we are used to.<br>
+However I still enjoy all the different anime genres unlike weastern media live-action or cartoon.
+Like video Games I've seen a great number. But a few that stand out to me are ....
+</p>
+<ul style="margin-left:50px;">
+<li style="list-style-image: url('./pics/icons/trc.png');">Tsubasa Reservoir Chronicles</li>
+<li style="list-style-image: url('./pics/icons/bleach.png');">Bleach</li>
+<li style="list-style-image: url('./pics/icons/geass.png');">Code Geass</li>
+<li style="list-style-image: url('./pics/icons/lodoss.png');">Record of Lodoss War</li>
+<li style="list-style-image: url('./pics/icons/fma.png');">FullMetal Alchamist</li>
+<li style="list-style-image: url('./pics/icons/gundam.png');">Gundam</li>
+<li style="list-style-image: url('./pics/icons/dbz.png');">Dragonball Z</li>
+<li style="list-style-image: url('./pics/icons/gurren.png');">Gurren Lagann</li>
+<li style="list-style-image: url('./pics/icons/pirate.png');">One Piece</li>
+<li style="list-style-image: url('./pics/icons/fairy.png');">Fairy Tail</li>
+
+</ul>
+</div>
+
+<div id="cycler">
+<img class="active" src="./pics/anime/fullalchemist.jpg" alt="My image"/>
+<img src="./pics/anime/aot.jpg" alt="My image"/>
+<img src="./pics/anime/Kenshin.jpg" alt="My image"/>
+<img src="./pics/anime/blackb.jpg" alt="My image"/>
+<img src="./pics/anime/bleach.jpg" alt="My image"/>
+<img src="./pics/anime/473.jpg" alt="My image"/>
+<img src="./pics/anime/op.jpg" alt="My image"/>
+<img src="./pics/anime/n.jpg" alt="My image"/>
+<img src="./pics/anime/dbz.jpg" alt="My image"/>
+<img src="./pics/anime/trc.jpg" alt="My image"/>
+<img src="./pics/anime/alukard.jpg" alt="My image"/>
+<img src="./pics/anime/sao2.png" alt="My image"/>
+</div> 
+
+
+</div>
+
+
+
+</body>
+</html>

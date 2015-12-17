@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+	$("#flip").click(function(){
+		$("#panel").slideToggle("slow");
+	});
+});	
+</script>
+
+<style>
+body{background-image:url("./pics/bg.jpg");}
+
+#div1
+	{
+		background-image:url("./pics/25186150.png");
+		background-color:#000000;
+		opacity:0.8;
+		border-radius: 5px; 
+		width:20%;
+		height:600px;
+		position:absolute;
+		margin-top:1%;
+		margin-left:1%;
+		margin-bottom:1%;
+
+	}
+
+#div2
+	{
+		background-image:url("./pics/Konachan.com - 156821 sample.png");
+		backgroung-repeat-x;
+		background-color:#000000;
+		opacity:0.7;
+		border-radius: 5px; 
+		width:75%;
+		height:600px;
+		float:right;
+		margin-top:1%;
+		margin-right:1%;
+		margin-bottom:1%;
+		position:relative;
+	}   
+
+#div3
+	{
+		background-image:url("./pics/176272.png");
+		border-radius: 5px; 
+		clear: both;
+		position: relative;
+		height: 4em;		
+	}
+	
+	
+#flip {	background-image:url("./pics/trc.png");
+		color:white; 
+		opacity: 0.6;
+		padding5px;text-align:center;
+		background-color:#000066;
+		
+		}
+
+#panel{
+		background-image:url("./pics/trc.png");
+		color:white;
+		padding:5px;
+		display:none;
+		}	
+a{color:white;}	
+ul#menu li{display:inline;}
+.nav
+	{
+		display: inline-block;		
+		color:white;
+		margin-left:10px;
+		margin-right:10px;
+	}
+#imgdiv{
+    position:absolute;
+	bottom:0;
+}
+
+</style>
+</head>
+
+<body>
+<div id="flip">Navigation<br><img src="./pics/Arrow.png" style="width:100px; height:50;margin:10px;"></div>
+<div id="panel">
+<ul id="menu">
+	<li><a href="index.html"><div class="nav">Main</div></a></li>
+	<li><a href="about.html"><div class="nav">About Me</div></a></li>
+	<li><a href="resume.html"><div class="nav">Resume</div></a></li>
+	<li><a href="other.html"><div class="nav">Other Jobs</div></a></li>
+	<li><a href="portfolio.html"><div class="nav">Portfolio</div></a></li>
+	<li><a href="PCrepair.html"><div class="nav">PC Repair</div></a></li>
+	<li><a href="videogames.html"><div class="nav">Video Games</div></a></li>
+	<li><a href="anime.html"><div class="nav">Anime</div></a></li>
+	<li><a href="music.html"><div class="nav">Music</div></a></li>
+	<li><a href="contact.html"><div class="nav">Contact Me</div></a></li>
+</ul>
+</div> 
+
+
+
+
+<div id="div1"> 
+<p>
+<h2>Contact Info</h2>
+Cell#:(613)-697-2220<br>
+<br>
+E-mail:jason.walsh@live.com
+</p>
+</div>
+<div id="div2">
+<div id="imgdiv"><a href="https://www.facebook.com/walsh.chaos"><img src="./pics/fbook.jpg" alt="facebook" style="width:75px;height:75px;"></a>
+<a href="https://twitter.com/Walsh_Chaos7"><img src="./pics/s3.png" alt="twitter" style="width:75px;height:75px;"></a>
+<a href="https://ca.linkedin.com/in/jason-walsh-2269b650"><img src="./pics/linkedin.jpg" alt="twitter" style="width:75px;height:75px;"></a>
+
+</div>
+</div>
+<div id="div3"></div>
+
+
+</body>
+</html>

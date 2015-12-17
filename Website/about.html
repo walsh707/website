@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+	$("#flip").click(function(){
+		$("#panel").slideToggle("slow");
+	});
+});	
+
+
+
+function cycleImages(){
+      var $active = $('#cycler .active');
+      var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
+      $next.css('z-index',2);//move the next image up the pile
+      $active.fadeOut(1500,function(){//fade out the top image
+	  $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+          $next.css('z-index',3).addClass('active');//make the next image the top one
+      });
+    }
+
+$(document).ready(function(){
+// run every 5s
+setInterval('cycleImages()', 5000);
+})
+
+
+</script>
+
+<style>
+body{background-image:url("./pics/bg.jpg");}
+
+#cycler{position:relative;}
+#cycler img{position:absolute;z-index:1;width:250px;height:250px;margin-top:5%;margin-left:2%;}
+#cycler img.active{z-index:3}	
+
+#pdiv{	
+		width:70%;
+		height:90px;
+		height:auto;
+		min-height:90px;
+		height:auto; 
+		float:right;
+		margin-right:1%;
+		background :rgb(31, 141, 214);
+		background: rgba(31, 141, 214, 0.5);
+		border-radius: 5px; 
+	}
+
+</style>
+
+
+<link rel="stylesheet" type="text/css" href="style.css">
+	
+	
+
+</head>
+
+<body>
+<div id="flip">Navigation<br><img src="./pics/Arrow.png" style="width:100px; height:50;margin:10px;"></div>
+<div id="panel">
+<ul id="menu">
+	<li><a href="index.html"><div class="nav">Main</div></a></li>
+	<li><a href="about.html"><div class="nav">About Me</div></a></li>
+	<li><a href="resume.html"><div class="nav">Resume</div></a></li>
+	<li><a href="other.html"><div class="nav">Other Jobs</div></a></li>
+	<li><a href="portfolio.html"><div class="nav">Portfolio</div></a></li>
+	<li><a href="PCrepair.html"><div class="nav">PC Repair</div></a></li>
+	<li><a href="videogames.html"><div class="nav">Video Games</div></a></li>
+	<li><a href="anime.html"><div class="nav">Anime</div></a></li>
+	<li><a href="music.html"><div class="nav">Music</div></a></li>
+	<li><a href="contact.html"><div class="nav">Contact Me</div></a></li>
+</ul>
+</div> 
+
+
+
+
+<div id="div1">
+<img src="./pics/misc/me.jpg" style="height:30%; width:95%; margin-top:3%;margin-left:2.5%;"/>
+</div>
+<div id="div2">
+
+<h1 style="text-align:center;">About Me</h1>
+<div id="cycler">
+<img class="active" src="./pics/misc/room.jpg"/>
+<img src="./pics/vg/ffvi.jpg"/>
+<img src="./pics/anime/NAC.jpg"/>
+<img src="./pics/misc/StarWars.png"/>
+<img src="./pics/anime/dbz.jpg"/>
+<img src="./pics/misc/computer.JPG"/>
+<img src="./pics/vg/XZ.bmp"/>
+<img src="./pics/misc/space.jpg"/>
+	
+</div> 
+
+<div id="pdiv">
+<h3 style="padding-left:5%;">So I guess to start off...</h3>
+<p style="padding:5%;">
+I like to think I'm a smart and intellectual person and someone who thinks things through and consider all option. I
+don't tke myself to seriously though, I don't really like arguing or debates because as far as I'm conserned its people 
+trying to convince people of thier point of view instead of taking anything else into consideration. I think I'm a pretty 
+calm person and don't really make a big deal out of things.<br>
+<br>
+My sense of humor can be considered dark to some people, my humor is primarily on the lines of gorge carlin,
+who I would consider to be in my top 10 list of people who ever lived. <br>
+<br>
+Three of my favorite things I could really talk for hours about Anime, Video Games and music
+and are all big aspects and influences to me. I am also a bit Star Wars fan for obvious reasons
+but also because I started really getting into video games with early StarWars games like X-wing.
+Like this site I like to try to combine my interests into everything I do, it motivates me more.<br>
+<br>
+Right now the latest adventure in my life is going back to school and I am enjoying it. 
+One of my greatest interests in the aqisition of knowledge I love to learn especially 
+when it's something I'm particularly interested in. I find myself excited and eager to go
+to class each day.
+</p>
+</div>
+
+</div>
+
+
+
+</body>
+</html>
